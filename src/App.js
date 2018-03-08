@@ -4,10 +4,10 @@ import CounterStore from './store'
 import logo from './logo.svg';
 import './App.css';
 
+const store = CounterStore
+
 @observer class App extends Component {
   render() {
-    const store = CounterStore
-
     return (
       <div className="App">
         <header className="App-header">
@@ -16,6 +16,8 @@ import './App.css';
         </header>
         <div className="App-intro">
           <h1>{ store.count }</h1>
+          <button onClick={ () => store.increment() }>+</button>
+          <button onClick={ () => store.decrement() }>-</button> 
         </div>
       </div>
     );
